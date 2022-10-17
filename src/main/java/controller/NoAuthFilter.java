@@ -21,7 +21,7 @@ public class NoAuthFilter implements Filter {
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-      throws IOException, ServletException {
+      throws IOException, ServletException, NullPointerException {
     HttpServletRequest req = (HttpServletRequest) request;
     HttpServletResponse res = (HttpServletResponse) response;
     try {
@@ -33,7 +33,7 @@ public class NoAuthFilter implements Filter {
         res.sendRedirect("index.jsp");
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      // e.printStackTrace();
       chain.doFilter(request, response);
     }
   }
