@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./static/css/global.css" />
 </head>
 <body>
-  <h1 class="text-3xl text-center">Login Account!!</h1>
+  <h1 class="text-3xl text-center">Login Account</h1>
   <form action="login" method="post">
     <div class="inp">
       <label for="email">Email</label>

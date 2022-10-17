@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -10,9 +11,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.User;
 
-@WebServlet("/login")
+@WebServlet(
+  urlPatterns = "/login",
+  name = "LoginServlet"
+)
 public class LoginServlet extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
@@ -32,12 +37,14 @@ public class LoginServlet extends HttpServlet {
     try {
       user = userDao.getUser(email);
       if(BCrypt.checkpw(password, user.getPassword())) {
-        resp.getWriter().append("Welcome " + user.getName()).append("\nemail: " + email);
+        // resp.getWriter().append("Welcome " + user.getName()).append("\nemail: " + email);
+        HttpSession session = req.getSession(true);
+        session.setAttribute("user", user.getName());
+        resp.sendRedirect("dashboard.jsp");
       } else {
         resp.getWriter().append("Incorrect credentials");
       }
-    } catch (ClassNotFoundException e) {
-      // TODO Auto-generated catch block
+    } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
       resp.getWriter().append("Sorry an error occured");
     }

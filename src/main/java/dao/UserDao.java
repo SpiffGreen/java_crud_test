@@ -30,11 +30,11 @@ public class UserDao {
     return result;
   }
 
-  public User getUser(String userEmail) throws ClassNotFoundException {
+  public User getUser(String userEmail) throws ClassNotFoundException, SQLException {
     String SELECT_USER_SQL = "SELECT * FROM `users` WHERE email = ?;";
-    
+    Connection connection = null;
     try {
-      Connection connection = DbConnection.getDbConnection();
+      connection = DbConnection.getDbConnection();
       PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_SQL);
       preparedStatement.setString(1, userEmail);
       ResultSet result = preparedStatement.executeQuery();
@@ -46,9 +46,10 @@ public class UserDao {
       }
       return user;
     } catch (SQLException e) {
-      // TODO: handle exception
       e.printStackTrace();
       return (new User());
+    } finally {
+      connection.close();
     }
   }
 }

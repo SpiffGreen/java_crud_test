@@ -1,7 +1,5 @@
 package model;
 
-import org.mindrot.jbcrypt.BCrypt;
-
 public class User {
   private String name;
   private String email;
