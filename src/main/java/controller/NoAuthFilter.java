@@ -12,8 +12,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(servletNames = { "LoginServlet",
-    "RegisterServlet" }, filterName = "NoAuthFilter", description = "Filter noauth URLs")
+@WebFilter(
+  servletNames = { "LoginServlet", "RegisterServlet" }, 
+  filterName = "NoAuthFilter", 
+  description = "Filter noauth URLs"
+)
 public class NoAuthFilter implements Filter {
 
   @Override
