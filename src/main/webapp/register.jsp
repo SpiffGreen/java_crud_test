@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="./static/css/global.css" />
+  <link rel="stylesheet" href="./dist/css/global.css" />
 </head>
 <body>
   <h1 class="text-3xl text-center">Registration Form</h1>

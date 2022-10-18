@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tw": "npx tailwindcss -i ./static/css/input.css -o ./static/css/global.css --watch"
+    "tw": "npx tailwindcss -i ./dist/css/input.css -o ./dist/css/global.css --watch",
+    "build": "npx tailwindcss -i ./dist/css/input.css -o ./dist/css/global.css --minify"
   },
   "keywords": [],
   "author": "Spiff Jekey-Green",
