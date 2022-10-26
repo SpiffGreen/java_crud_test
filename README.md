@@ -16,4 +16,8 @@ Servlets provide a component-based, platform-independent method for building Web
 
 A good understanding of Java programming.
 
-##
+## What are Servlets?
+
+Java Servlets are programs that run on a Web or Application server and act as a middle layer between a requests coming from a Web browser or other HTTP client and databases or applications on the HTTP server.
+Servlets are Java classes run by a web server that has an interpreter that supports the Java Servlet specification.
+
