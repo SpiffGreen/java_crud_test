@@ -8,5 +8,12 @@ Servlets provide a component-based, platform-independent method for building Web
 
 ## Applications of Servlet
 
-- Collect user input from client
-- Connect 
+- Collect user input from client.
+- Process requests and send response.
+- Connect and communicate with databases.
+
+## Prerequisites
+
+A good understanding of Java programming.
+
+##
